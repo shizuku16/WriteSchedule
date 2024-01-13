@@ -25,3 +25,7 @@ input{
 button{
     margin-left: 1ch;
 }
+
+html {
+    touch-action: manipulation;
+}
