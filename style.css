@@ -1,6 +1,7 @@
 td,th{
     border:solid 1px #aaaaaa;
     padding:1px 10px;
+    touch-action: manipulation;
 }
 table{
     border-collapse:collapse;
@@ -25,4 +26,5 @@ input{
 }
 button{
     margin-left: 1ch;
+    touch-action: manipulation;
 }
