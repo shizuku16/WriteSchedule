@@ -1,0 +1,27 @@
+td,th{
+    border:solid 1px #aaaaaa;
+    padding:1px 10px;
+}
+table{
+    border-collapse:collapse;
+    padding: 10px;
+}
+
+
+.fix{
+    position: sticky;
+    top: 0;
+    background: #fff;
+    margin-bottom: 1ch;
+  }
+
+.head{
+    height: 50px;
+}
+
+input{
+    width: 6ch;
+}
+button{
+    margin-left: 1ch;
+}
