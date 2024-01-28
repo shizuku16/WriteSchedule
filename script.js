@@ -61,7 +61,7 @@ function display(){
             lastDay=31;
             break;
         case 2:
-            if(year%4) lastDay=29;
+            if(year%4==0) lastDay=29;
             else lastDay=28;
             break;
         default:
