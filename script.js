@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const thisMonth=new Date().getMonth()+1;
     const select=document.getElementById("month");
     let string="";
-    let selectMonth=thisMonth+1
+    let selectMonth=new Date().getDate()>=15?thisMonth+1:thisMonth
     for(let i=1;i<=selectMonth;i++) string+=`<option>${i}月</option>`;
     select.insertAdjacentHTML("beforeend",string);
     select.value=`${thisMonth}月`;
@@ -118,12 +118,14 @@ function send(){
                 "Content-Type": "application/json",
                 "body":JSON.stringify(data),
             })
+            .then(e=>{
+                flg.clear();
+                alert("送信が完了しました。");
+            })
         }
         catch{
             alert("送信に失敗しました。何故でしょう……");
             return
         }
-        flg.clear();
-        alert("送信が完了しました。");
     })
 }
