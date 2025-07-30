@@ -28,6 +28,7 @@ function dataGet(){
     }
     member.disalbed=true;
 
+    showLoading();
     fetch(`https://script.google.com/macros/s/AKfycbwIFhLsMlqMGEhSzNBJJDscjV3P-lAh9n_KY0_4XY36oZu7gl0difbRNpggBRY3dNxa/exec?data=${year},${month}`)
     .then(res=>res.json())
     .then(data=>{
@@ -38,6 +39,7 @@ function dataGet(){
         member.insertAdjacentHTML("beforeend",string);
         member.value="";
         member.disalbed=false;
+        hideLoading();
         console.log(data)
     })
 }
@@ -113,6 +115,7 @@ function send(){
         const data={"year":year,"month":month,"member":member,"data":JSON.stringify(JSON.parse(window.sessionStorage.getItem(`${year}${month}`))[member])}
         console.log(data)
         try{
+            showLoading();
             fetch(`https://script.google.com/macros/s/AKfycbwpMq7qcPHmq9r7ndzALu4s2GBzo_FZeXayZVjIyqnIZVQ5PPc2mDWaxFwQ4B0nHFITpw/exec`,{
                 "method":"post",
                 "Content-Type": "application/json",
@@ -120,6 +123,7 @@ function send(){
             })
             .then(e=>{
                 flg.clear();
+                hideLoading();
                 alert("送信が完了しました。");
             })
         }
